@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <fileType>csv</fileType>
+    <storageFrom>mysql</storageFrom>
+    <storageTo>http</storageTo>
+    <setup>
+        <storageFrom>
+            <host>192.168.22.128:3306</host>
+            <username>root</username>
+            <password>wqw88650065</password>
+            <dbname>newecshop</dbname>
+            <charset>utf-8</charset>
+            <type>mysql</type>
+        </storageFrom>
+        <storageTo>
+            <host>http://localhost</host>
+            <writeUrl>/xing100/dup/dup.php</writeUrl>
+            <readUrl></readUrl>
+            <method>POST</method>
+            <fileField>file</fileField>
+            <size>100</size>
+        </storageTo>
+    </setup>
+    <webList>
+        <!-- 此节点为自定义网站唯一名字 -->
+        <gxs>
+            <!-- 从数据表导出的表名 -->
+            <tablename>ecs_goods_demo</tablename>
+            <!-- 导出的文件名 -->
+            <file>gxs.csv</file>
+            <!-- 过滤条件 -->
+            <filter>goods_id > 3950</filter>
+            <!-- 每次查询条目 -->
+            <size>100</size>
+            <!-- 字段名，值为正则表达式，规范取值，形式为exp1,exp2，example: a(x*)b, T -->
+            <colNames>
+                <cat_id></cat_id>
+                <goods_name></goods_name>
+                <goods_number></goods_number>
+                <market_price>￥, </market_price>
+                <shop_price></shop_price>
+                <promote_price></promote_price>
+                <goods_desc></goods_desc>
+                <goods_thumb></goods_thumb>
+                <original_img></original_img>
+                <pandaWebUrl></pandaWebUrl>
+            </colNames>
+        </gxs>
+    </webList>
+</config>
